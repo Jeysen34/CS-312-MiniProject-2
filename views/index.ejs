@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles/styles.css" />
+    <title>CryptoMart</title>
+  </head>
+  <body>
+    <!-- Header -->
+    <%- include('header') %>
+    <main>
+      <!-- Ticker with all cryptocurrencies-->
+      <div class="tickerContainer">
+        <div class="tickerItem">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Bitcoin.svg/640px-Bitcoin.svg.png"
+            style="width: 20px; height: 20px"
+          />
+          Bitcoin
+        </div>
+        <div class="tickerItem">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Ethereum-icon-purple.svg/640px-Ethereum-icon-purple.svg.png"
+            style="width: 20px; height: 20px"
+          />
+          Ethereum
+        </div>
+        <div class="tickerItem">
+          <img src="/styles/theta.png" style="width: 20px; height: 20px" />
+          Theta
+        </div>
+        <div class="tickerItem">
+          <img
+            src="https://s2.coinmarketcap.com/static/img/coins/200x200/1518.png"
+            style="width: 20px; height: 20px"
+          />
+          Maker
+        </div>
+        <div class="tickerItem">
+          <img
+            src="https://s2.coinmarketcap.com/static/img/coins/200x200/8985.png"
+            style="width: 20px; height: 20px"
+          />
+          Efinity
+        </div>
+        <div class="tickerItem">
+          <img
+            src="https://s2.coinmarketcap.com/static/img/coins/64x64/2011.png"
+            style="width: 20px; height: 20px"
+          />
+          Tezos
+        </div>
+        <div class="tickerItem">
+          <img
+            src="https://s2.coinmarketcap.com/static/img/coins/64x64/4847.png"
+            style="width: 20px; height: 20px"
+          />
+          Stacks
+        </div>
+        <div class="tickerItem">
+          <img
+            src="https://s2.coinmarketcap.com/static/img/coins/64x64/1765.png"
+            style="width: 20px; height: 20px"
+          />
+          EOS
+        </div>
+        <div class="tickerItem">
+          <img
+            src="https://s2.coinmarketcap.com/static/img/coins/64x64/4943.png"
+            style="width: 20px; height: 20px"
+          />
+          Dai
+        </div>
+        <div class="tickerItem">
+          <img
+            src="https://s2.coinmarketcap.com/static/img/coins/64x64/1975.png"
+            style="width: 20px; height: 20px"
+          />
+          Chainlink
+        </div>
+        <div class="tickerItem">
+          <img
+            src="https://s2.coinmarketcap.com/static/img/coins/64x64/4066.png"
+            style="width: 20px; height: 20px"
+          />
+          Chiliz
+        </div>
+      </div>
+      <!-- Enter base and counter currency form-->
+      <div class="container">
+        <h2>Please Enter a Base and Counter Currency</h2>
+        <form action="/" id="form" class="form" method="POST">
+          <div class="searchBox">
+            <input
+              type="text"
+              name="base_currency"
+              class="curreny-input"
+              value="<%= data.base_currency %>"
+              placeholder="Base Currency"
+              required
+            />
+            <input
+              type="text"
+              class="curreny-input"
+              name="counter_currency"
+              value="<%= data.counter_currency %>"
+              placeholder="Counter Currency"
+              required
+            />
+          </div>
+          <!-- Get price button-->
+          <button type="submit" class="currency-submit">Get Price</button>
+        </form>
+        <!-- display results-->
+        <section id="result" class="result">
+          <%if (locals.data) { %>
+          <div class="card-data">
+            <h3>
+              <!-- Display base and counter currency-->
+              Currency: <%= data.base_currency %> | Counter Currency:
+              <%=data.counter_currency %>
+            </h3>
+            <!-- Display current price-->
+            <h4>Current Price: <%= data.auction_price %></h4>
+          </div>
+          <!-- Display error message-->
+          <%}%> <%if (locals.error) { %>
+          <div class="error-card"><%= error %></div>
+          <%}%>
+        </section>
+      </div>
+    </main>
+  </body>
+  <!-- Footer -->
+  <%- include('footer') %>
+</html>

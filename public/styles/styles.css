@@ -1,0 +1,150 @@
+/* style for font */
+html {
+  font-family: "Comic Sans MS";
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* style for the header */
+header {
+  padding: 20px;
+  background-color: white;
+  border-bottom: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* style for the h1 tag in the header to center it */
+header h1 {
+  padding-left: 5%;
+}
+
+/* style for nav bar */
+nav ul {
+  list-style: none;
+  display: flex;
+  padding-top: 10px;
+}
+
+nav a {
+  color: black;
+  text-decoration: none;
+  margin: 10px;
+  font-size: larger;
+}
+
+nav a:hover {
+  color: blue;
+}
+
+/* style for the main section */
+body {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  background-color: whitesmoke;
+}
+/* style for ticker */
+.tickerContainer {
+  position: absolute;
+  box-sizing: content-box;
+  width: 100%;
+  animation: ticker 25s linear infinite;
+}
+
+.tickerItem {
+  display: inline-block;
+  font-size: large;
+  padding: 20px;
+}
+/* ticker transition */
+@keyframes ticker {
+  from {
+    transform: translate(100%);
+  }
+  to {
+    transform: translate(-100%);
+  }
+}
+
+/* style for container */
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+/* style for search box */
+.searchBox {
+  display: block;
+  text-align: center;
+}
+
+/* style for the input box */
+.searchBox input {
+  width: 10%;
+  padding: 10px;
+  margin: 10px auto;
+  border-radius: 20px;
+  border: 2px solid black;
+  box-shadow: 1px 1px 1px 1px blue;
+  text-align: center;
+}
+
+.curreny-input {
+  text-transform: uppercase;
+}
+
+/* style for the submit button */
+.currency-submit {
+  padding: 10px 20px;
+  background-color: blue;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.currency-submit:hover {
+  box-shadow: 0 5px 10px 0 black;
+  text-decoration: underline;
+}
+
+/* style for Crypto */
+.card-data {
+  margin: 30px 35%;
+  border: 3px solid blue;
+  border-radius: 20px;
+}
+
+/* style for error message */
+.error-card {
+  color: red;
+  text-decoration: underline;
+  text-transform: uppercase;
+  font-size: larger;
+}
+
+/* style for about page */
+.welcomeabout {
+  margin: 50px 35%;
+  border: 3px solid blue;
+  border-radius: 20px;
+}
+/* style for the footer */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 0;
+  text-align: center;
+  background-color: white;
+  border-top: 1px solid black;
+}
+
+/* references */
+
+/* ticker: https://stackoverflow.com/questions/64187652/how-do-i-add-a-news-ticker-to-my-html-code */
